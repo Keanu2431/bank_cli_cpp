@@ -11,9 +11,13 @@ class Account {
     static int count;
 private:
     std::string account_number;
-    double balance{0};
+    double balance;
 public:
-    Account(std::string account_number);
+    Account(std::string account_number,double balance);
+
+    std::string get_account_number() {
+        return this->account_number;
+    }
 };
 
 

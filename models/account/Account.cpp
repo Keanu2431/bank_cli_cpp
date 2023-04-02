@@ -4,9 +4,11 @@
 
 #include "Account.h"
 
+#include <utility>
+
 int Account::count{0};
 
-Account::Account(std::string account_number) :
-        account_number{account_number} {
+Account::Account(std::string account_number, double balance = 0) :
+        account_number{std::move(account_number)}, balance{balance} {
     count++;
 }

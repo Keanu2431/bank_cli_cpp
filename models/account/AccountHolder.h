@@ -1,7 +1,7 @@
 //
 // Created by Keanu Lumpkin on 4/1/23.
 //
-#include <vector>
+#include <set>
 #include <string>
 #include "./Account.h"
 
@@ -11,14 +11,14 @@
 
 class AccountHolder {
 private:
-    std::vector<Account> accounts;
+    std::set<Account *> accounts{};
     std::string username;
     std::string pin;
     static int count;
 public:
     AccountHolder(std::string username, std::string pin);
 
-    void create_new_account();
+    void open_new_account(Account &account);
 
     std::string get_username() {
         return this->username;

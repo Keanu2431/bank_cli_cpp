@@ -3,16 +3,18 @@
 //
 
 #include "AccountHolder.h"
-
+#include <iostream>
 #include <utility>
 
 int AccountHolder::count{0};
 
-void AccountHolder::create_new_account() {
-
-}
-
 AccountHolder::AccountHolder(std::string username, std::string pin) :
         username{std::move(username)}, pin{std::move(pin)} {
     count++;
+}
+
+void AccountHolder::open_new_account(Account &account) {
+    this->accounts.insert(&account);
+    std::cout << "Account " + account.get_account_number() +
+                 " opened." << std::endl;
 }
