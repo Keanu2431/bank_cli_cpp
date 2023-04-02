@@ -15,6 +15,13 @@ public:
         for (char &c: string)
             c = toupper(c);
     }
+
+    static std::string to_uppercase_string(const std::string& string) {
+        std::string str{};
+        for (char c: string)
+            str += c;
+        return str;
+    }
 };
 
 

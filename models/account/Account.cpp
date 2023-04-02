@@ -3,3 +3,10 @@
 //
 
 #include "Account.h"
+
+int Account::count{0};
+
+Account::Account(std::string account_number) :
+        account_number{account_number} {
+    count++;
+}

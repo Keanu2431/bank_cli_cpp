@@ -14,8 +14,15 @@ private:
     std::vector<Account> accounts;
     std::string username;
     std::string pin;
+    static int count;
 public:
+    AccountHolder(std::string username, std::string pin);
+
     void create_new_account();
+
+    std::string get_username() {
+        return this->username;
+    }
 };
 
 
